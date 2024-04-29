@@ -4,6 +4,11 @@ public class SalaDeEspera {
 
 	private Paciente[] pacientes;
 	private int tope;
+	
+	public SalaDeEspera() {
+		this.pacientes = new Paciente[50];
+		tope = 1;
+	}
 
 	public SalaDeEspera(Paciente[] pacientes) {
 		this.pacientes = pacientes;
@@ -14,7 +19,7 @@ public class SalaDeEspera {
 		pacientes[tope] = paciente;
 		
 		int pos = tope;
-		while(pacientes[pos/2].compareTo(paciente) > 0 && pos != 1) {
+		while(pacientes[pos/2] != null && pacientes[pos/2].compareTo(paciente) > 0 && pos != 1) {
 			Paciente aux = pacientes[pos/2];
 			pacientes[pos/2] = paciente;
 			pacientes[pos] = aux;
@@ -30,7 +35,7 @@ public class SalaDeEspera {
 			return;
 		}
 		Paciente pacienteAtendido = pacientes[1];
-		System.out.printf("Se atendió al paciente: %s", pacienteAtendido);
+		System.out.printf("Se atiende al paciente: %s\n", pacienteAtendido.getNombre());
 		
 		tope--;
 		if(tope == 1) {
@@ -52,8 +57,17 @@ public class SalaDeEspera {
 	}
 	
 	private int GetPosHijoMenor(int pos) {
-		// TODO Auto-generated method stub
-		return -1;
+		int posHijoIzq = pos * 2;
+		Paciente hijoIzq = this.pacientes[posHijoIzq];
+		Paciente hijoDer = this.pacientes[posHijoIzq + 1];
+		
+		if(hijoIzq == null && hijoDer == null) {
+			return -1;
+		}
+		if(hijoDer == null || hijoIzq.compareTo(hijoDer) == -1) {
+			return posHijoIzq;
+		}
+		return posHijoIzq + 1;
 	}
 
 	public Paciente[] getPacientes() {

@@ -28,8 +28,7 @@ public class Paciente implements Comparable<Paciente> {
 
 	@Override
 	public int compareTo(Paciente o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return Integer.compare(this.enfermedad.getPrioridad().ordinal(), o.enfermedad.getPrioridad().ordinal());
 	}
 
 	
