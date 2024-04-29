@@ -29,20 +29,21 @@ public class SalaDeEspera {
 	}
 	
 	
-	public void Atender() {
+	public Paciente Atender() {
 		if(tope == 1) {
 			System.out.println("No hay nadie para atender");
-			return;
+			return null;
 		}
 		Paciente pacienteAtendido = pacientes[1];
 		System.out.printf("Se atiende al paciente: %s\n", pacienteAtendido.getNombre());
 		
 		tope--;
 		if(tope == 1) {
-			return;
+			return pacienteAtendido;
 		}
 		
 		pacientes[1] = pacientes[tope];
+		pacientes[tope] = null;
 		
 		int pos = 1;
 		int posHijoMenor = GetPosHijoMenor(pos);
@@ -53,7 +54,7 @@ public class SalaDeEspera {
 			pos = posHijoMenor;
 			posHijoMenor = GetPosHijoMenor(pos);
 		}
-		return;
+		return pacienteAtendido;
 	}
 	
 	private int GetPosHijoMenor(int pos) {
@@ -61,10 +62,10 @@ public class SalaDeEspera {
 		Paciente hijoIzq = this.pacientes[posHijoIzq];
 		Paciente hijoDer = this.pacientes[posHijoIzq + 1];
 		
-		if(hijoIzq == null && hijoDer == null) {
+		if(posHijoIzq >= tope && posHijoIzq + 1 >= tope) {
 			return -1;
 		}
-		if(hijoDer == null || hijoIzq.compareTo(hijoDer) == -1) {
+		if(posHijoIzq + 1 >= tope || hijoIzq.compareTo(hijoDer) == -1) {
 			return posHijoIzq;
 		}
 		return posHijoIzq + 1;
