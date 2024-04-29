@@ -26,4 +26,9 @@ public class Enfermedad {
 		this.prioridad = prioridad;
 	}
 
+	@Override
+	public String toString() {
+		return "Nombre: " + nombre + " - Prioridad: " + prioridad;
+	}
+
 }

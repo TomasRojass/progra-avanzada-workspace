@@ -34,4 +34,25 @@ public class Paciente implements Comparable<Paciente> {
 	public int compareTo(Paciente o) {
 		return Integer.compare(this.getEnfermedadPrioritaria().getPrioridad().ordinal(), o.getEnfermedadPrioritaria().getPrioridad().ordinal());
 	}
+
+	@Override
+	public String toString() {
+		return	"Paciente:\n" +
+				"- Nombre: " + nombre + "\n" +
+				"- Enfermedades:\n" +  mostrarEnfermedades();
+	}
+	
+	private String mostrarEnfermedades() {
+		String listaEnfermedadesString = "";
+		for(Enfermedad enfermedad : enfermedades) {
+			listaEnfermedadesString += "\t" + enfermedad.toString() + "\n";
+		}
+		return listaEnfermedadesString;
+	}
+
+	public String mostrarPaciente() {
+		return "[" + getNombre() + " - " + getEnfermedadPrioritaria().getNombre() + " - " + getEnfermedadPrioritaria().getPrioridad() + "]";
+	}
+
+	
 }

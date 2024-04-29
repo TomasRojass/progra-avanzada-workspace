@@ -15,9 +15,8 @@ public class SalaDeEspera {
 		tope = 1;
 	}
 	
-	public void AgregarPaciente(Paciente paciente) {
+	public void agregarPaciente(Paciente paciente) {
 		pacientes[tope] = paciente;
-		
 		int pos = tope;
 		while(pacientes[pos/2] != null && pacientes[pos/2].compareTo(paciente) > 0 && pos != 1) {
 			Paciente aux = pacientes[pos/2];
@@ -28,8 +27,7 @@ public class SalaDeEspera {
 		tope++;
 	}
 	
-	
-	public Paciente Atender() {
+	public Paciente atender() {
 		if(tope == 1) {
 			System.out.println("No hay nadie para atender");
 			return null;
@@ -46,18 +44,26 @@ public class SalaDeEspera {
 		pacientes[tope] = null;
 		
 		int pos = 1;
-		int posHijoMenor = GetPosHijoMenor(pos);
+		int posHijoMenor = getPosHijoMenor(pos);
 		while(posHijoMenor != -1) {
 			Paciente aux = pacientes[posHijoMenor];
 			pacientes[posHijoMenor] = pacientes[pos];
 			pacientes[pos] = aux;
 			pos = posHijoMenor;
-			posHijoMenor = GetPosHijoMenor(pos);
+			posHijoMenor = getPosHijoMenor(pos);
 		}
 		return pacienteAtendido;
 	}
 	
-	private int GetPosHijoMenor(int pos) {
+	public Paciente[] getPacientes() {
+		return pacientes;
+	}
+
+	public int getTope() {
+		return tope;
+	}
+	
+	private int getPosHijoMenor(int pos) {
 		int posHijoIzq = pos * 2;
 		Paciente hijoIzq = this.pacientes[posHijoIzq];
 		Paciente hijoDer = this.pacientes[posHijoIzq + 1];
@@ -71,11 +77,33 @@ public class SalaDeEspera {
 		return posHijoIzq + 1;
 	}
 
-	public Paciente[] getPacientes() {
-		return pacientes;
+	public void mostrarSalaDeEsperaVector () {
+		for(int i = 1; i < tope; i++) {
+			System.out.printf(pacientes[i].toString() + "\n\n");
+		}
+	}
+	
+	public void mostrarSalaDeEsperaArbol() {
+		mostrarSalaDeEsperaArbolRecursivo(1, 0, "");
+	    System.out.println();
 	}
 
-	public int getTope() {
-		return tope;
+	private void mostrarSalaDeEsperaArbolRecursivo(int indice, int nivel, String prefijo) {
+	    if (indice < tope && pacientes[indice] != null) {
+	    	mostrarSalaDeEsperaArbolRecursivo(indice * 2 + 1, nivel + 1, "\t\t" + prefijo);
+	        System.out.print(prefijo);
+	        for (int i = 0; i < nivel; i++) {
+	            System.out.print("\t\t\t");
+	        }
+	        System.out.println(pacientes[indice].mostrarPaciente());
+	        mostrarSalaDeEsperaArbolRecursivo(indice * 2, nivel + 1, "\t\t" + prefijo);
+	    } else {
+	        System.out.println();
+	    }
 	}
+
+
+
+
+
 }
