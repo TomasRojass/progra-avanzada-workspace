@@ -158,6 +158,7 @@ public class SalaDeEsperaTest {
 		sala.agregarPaciente(ana);
 		sala.agregarPaciente(luis);
 		sala.agregarPaciente(carlos);
+		sala.agregarPaciente(jose);
 		sala.agregarPaciente(marcela);
 		sala.agregarPaciente(eduardo);
 
