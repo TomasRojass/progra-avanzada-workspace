@@ -3,9 +3,9 @@ package hospital;
 public class Enfermedad {
 
 	private String nombre;
-	private int prioridad;
+	private Prioridad prioridad;
 	
-	public Enfermedad(String nombre, int prioridad) {
+	public Enfermedad(String nombre, Prioridad prioridad) {
 		this.nombre = nombre;
 		this.prioridad = prioridad;
 	}
@@ -18,11 +18,11 @@ public class Enfermedad {
 		this.nombre = nombre;
 	}
 
-	public int getPrioridad() {
+	public Prioridad getPrioridad() {
 		return prioridad;
 	}
 
-	public void setPrioridad(int prioridad) {
+	public void setPrioridad(Prioridad prioridad) {
 		this.prioridad = prioridad;
 	}
 

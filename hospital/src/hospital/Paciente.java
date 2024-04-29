@@ -1,13 +1,15 @@
 package hospital;
 
+import java.util.List;
+
 public class Paciente implements Comparable<Paciente> {
 
 	private String nombre;
-	private Enfermedad enfermedad;
+	private List<Enfermedad> enfermedades;
 	
-	public Paciente(String nombre, Enfermedad enfermedad) {
+	public Paciente(String nombre, List<Enfermedad> enfermedades) {
 		this.nombre = nombre;
-		this.enfermedad = enfermedad;
+		this.enfermedades = enfermedades;
 	}
 
 	public String getNombre() {
@@ -17,22 +19,19 @@ public class Paciente implements Comparable<Paciente> {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public Enfermedad getEnfermedad() {
-		return enfermedad;
-	}
-
-	public void setEnfermedad(Enfermedad enfermedad) {
-		this.enfermedad = enfermedad;
+	
+	private Enfermedad getEnfermedadPrioritaria() {
+		Enfermedad enfermedadPrioritaria = enfermedades.get(0);
+		for (Enfermedad enfermedad : enfermedades) {
+			if(Integer.compare(enfermedad.getPrioridad().ordinal(), enfermedadPrioritaria.getPrioridad().ordinal()) < 0) {
+				enfermedadPrioritaria = enfermedad;
+			}
+		}
+		return enfermedadPrioritaria;
 	}
 
 	@Override
 	public int compareTo(Paciente o) {
-		// TODO Auto-generated method stub
-		return 0;
+		return Integer.compare(this.getEnfermedadPrioritaria().getPrioridad().ordinal(), o.getEnfermedadPrioritaria().getPrioridad().ordinal());
 	}
-
-	
-	
-	
 }
