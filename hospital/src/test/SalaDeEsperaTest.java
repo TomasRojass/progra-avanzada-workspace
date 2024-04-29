@@ -18,17 +18,17 @@ public class SalaDeEsperaTest {
 	private static SalaDeEspera sala;
 
 	private static Enfermedad paroCardiaco = new Enfermedad("Paro cardíaco", Prioridad.RESUCITACION);
-	
+
 	private static Enfermedad ataqueAlCorazon = new Enfermedad("Ataque al corazón", Prioridad.EMERGENCIA);
 	private static Enfermedad fracturaPierna = new Enfermedad("Fractura de Pierna", Prioridad.EMERGENCIA);
-	
+
 	private static Enfermedad fiebreAlta = new Enfermedad("Fiebre Alta", Prioridad.URGENCIA);
-	
+
 	private static Enfermedad alergia = new Enfermedad("Alergia", Prioridad.POCA_URGENCIA);
 	private static Enfermedad dolorDeGarganta = new Enfermedad("Dolor de Garganta", Prioridad.POCA_URGENCIA);
 	private static Enfermedad gripe = new Enfermedad("Gripe", Prioridad.POCA_URGENCIA);
 	private static Enfermedad influenza = new Enfermedad("Influenza", Prioridad.POCA_URGENCIA);
-	
+
 	private static Enfermedad dolorDeCabeza = new Enfermedad("Dolor de cabeza", Prioridad.SIN_URGENCIA);
 	private static Enfermedad dolorDeMuelas = new Enfermedad("Dolor de Muelas", Prioridad.SIN_URGENCIA);
 	private static Enfermedad fractura = new Enfermedad("Fractura", Prioridad.SIN_URGENCIA);
@@ -126,44 +126,45 @@ public class SalaDeEsperaTest {
 		enfermedadesLuis.add(alergia);
 		enfermedadesLuis.add(gripe);
 
-	    List<Enfermedad> enfermedadesCarlos = new ArrayList<>();
-	    enfermedadesCarlos.add(dolorDeGarganta);
-	    enfermedadesCarlos.add(ataqueAlCorazon);
-	    
-	    List<Enfermedad> enfermedadesMarcela = new ArrayList<>();
-	    enfermedadesMarcela.add(influenza);
-	    enfermedadesMarcela.add(fracturaPierna);
+		List<Enfermedad> enfermedadesCarlos = new ArrayList<>();
+		enfermedadesCarlos.add(dolorDeGarganta);
+		enfermedadesCarlos.add(ataqueAlCorazon);
 
-	    List<Enfermedad> enfermedadesJose = new ArrayList<>();
-	    enfermedadesJose.add(dolorDeMuelas);
-	    enfermedadesJose.add(gripe);
+		List<Enfermedad> enfermedadesMarcela = new ArrayList<>();
+		enfermedadesMarcela.add(influenza);
+		enfermedadesMarcela.add(fracturaPierna);
 
-	    List<Enfermedad> enfermedadesEduardo = new ArrayList<>();
-	    enfermedadesEduardo.add(paroCardiaco);
-	    enfermedadesEduardo.add(fractura);
-		
+		List<Enfermedad> enfermedadesJose = new ArrayList<>();
+		enfermedadesJose.add(dolorDeMuelas);
+		enfermedadesJose.add(gripe);
+
+		List<Enfermedad> enfermedadesEduardo = new ArrayList<>();
+		enfermedadesEduardo.add(paroCardiaco);
+		enfermedadesEduardo.add(fractura);
+
 		Paciente juan = new Paciente("Juan", enfermedadesJuan);
 		Paciente pedro = new Paciente("Pedro", enfermedadesPedro);
 		Paciente micaela = new Paciente("Micaela", enfermedadesMicaela);
 		Paciente ana = new Paciente("Ana", enfermedadesAna);
 		Paciente luis = new Paciente("Luis", enfermedadesLuis);
-	    Paciente carlos = new Paciente("Carlos", enfermedadesCarlos);
-	    Paciente jose = new Paciente("Jose", enfermedadesJose);
-	    Paciente marcela = new Paciente("Marcela", enfermedadesMarcela);
-	    Paciente eduardo = new Paciente("Eduardo", enfermedadesEduardo);
+		Paciente carlos = new Paciente("Carlos", enfermedadesCarlos);
+		Paciente jose = new Paciente("Jose", enfermedadesJose);
+		Paciente marcela = new Paciente("Marcela", enfermedadesMarcela);
+		Paciente eduardo = new Paciente("Eduardo", enfermedadesEduardo);
 
 		sala.agregarPaciente(pedro);
 		sala.agregarPaciente(juan);
 		sala.agregarPaciente(micaela);
 		sala.agregarPaciente(ana);
 		sala.agregarPaciente(luis);
-	    sala.agregarPaciente(carlos);
-	    sala.agregarPaciente(marcela);
-	    sala.agregarPaciente(eduardo);
+		sala.agregarPaciente(carlos);
+		sala.agregarPaciente(marcela);
+		sala.agregarPaciente(eduardo);
 
 		sala.mostrarSalaDeEsperaVector();
 
-		System.out.println("\n=================================================================================================================================\n");
+		System.out.println(
+				"\n=================================================================================================================================\n");
 
 		sala.mostrarSalaDeEsperaArbol();
 
