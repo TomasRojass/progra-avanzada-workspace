@@ -42,10 +42,10 @@ public class Archivo {
             // Leer la dimension de la casa
             scanner.nextLine().split(" ");
             
-         // Leer la cantidad de piedras en el terreno
+            // Leer la cantidad de piedras en el terreno
             int cantidadPiedras = Integer.parseInt(scanner.nextLine());
             
-         // Llenar el terreno con las ubicaciones de las piedras
+            // Llenar el terreno con las ubicaciones de las piedras
             for (int i = 0; i < cantidadPiedras; i++) {
                 String[] ubicacionPiedra = scanner.nextLine().split(" ");
                 int filaPiedra = Integer.parseInt(ubicacionPiedra[0]) - 1;
@@ -82,11 +82,6 @@ public class Archivo {
             
             matriz = new String[filasCasa][columnasCasa];
             
-//            for(int i=0; i<matriz.length; i++) {
-//    			for( int j=0; j< matriz[0].length; j++)
-//    				matriz[i][j]= "C";
-//    		}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
