@@ -22,23 +22,24 @@ public class SistemaPedregal {
 //			System.out.println("\n");
 //		}
 		
-		int minFila= terreno.length;
-		int minCol = terreno[0].length;
-		// por ahora le asigno las puntas mas grandes, habria que ver como obtener la punta mas pequeña
-		
-		boolean puedeUbicar = esPosibleUbicarCasa(terreno, casa);
-		if (puedeUbicar)
-			System.out.println("Se puede ubicar la casa");
-		
-		else
-			System.out.println("No se puede ubicar la casa");
-		
+//		int minFila= terreno.length;
+//		int minCol = terreno[0].length;
+//		por ahora le asigno las puntas mas grandes, habria que ver como obtener la punta mas pequeña
+		int[] puntas = esPosibleUbicarCasa(terreno, casa);
+//		boolean puedeUbicar = esPosibleUbicarCasa(terreno, casa, minFila, minCol);
+//		if (puntas[0] != -1) { 
+//			System.out.println("Se puede ubicar la casa");
+//			//System.out.println("fila minima: " +puntas[0] + "\ncolumna minima: " + puntas[1]);
+//		}
+//		else
+//			System.out.println("No se puede ubicar la casa");
+//		
 		Archivo archivoOut= new Archivo("Pedregal");
-		archivoOut.crearArchivoSalida(puedeUbicar, minFila, minCol, Archivo.RUTA_ARCHIVOS_SALIDA);
+		archivoOut.crearArchivoSalida(puntas, Archivo.RUTA_ARCHIVOS_SALIDA);
 	}
 
-	public static boolean esPosibleUbicarCasa(String[][] terreno, String[][] casa) {
-		
+	public static int[] esPosibleUbicarCasa(String[][] terreno, String[][] casa) {
+		int[] puntas= new int[2];
 		for (int i = 0; i <= terreno.length - casa.length; i++) { // asegurarse de que podamos comenzar a colocar la
 																	// casa en una fila donde haya suficiente espacio
 			for (int j = 0; j <= terreno[0].length - casa[0].length; j++) {
@@ -55,11 +56,13 @@ public class SistemaPedregal {
 					}
 				}
 				if (puedeUbicar) {
-					return true;
+					puntas[0]=i;
+					puntas[1]=j;
+					return puntas;
 				}
 			}
 		}
-		
-		return false;
+		puntas[0]=-1;
+		return puntas;
 	}
 }

@@ -95,17 +95,17 @@ public class Archivo {
 		return matriz;
 	}
 	
-	public void crearArchivoSalida(boolean puedeUbicar,int fila, int columna, String rutaArchivo) {
+	public void crearArchivoSalida(int[] puntas, String rutaArchivo) {
 		FileWriter file = null;
 		PrintWriter printWriter = null;
 		try {
 			file = new FileWriter(rutaArchivo + this.nombre + ".out");
 			printWriter = new PrintWriter(file);
-			if(!puedeUbicar) {
+			if(puntas[0]== -1) {
 				printWriter.println("NO");
 			}else {
 				printWriter.println("SI");
-				printWriter.println(fila + " " + columna);
+				printWriter.println(puntas[0] + " " + puntas[1]);
 				printWriter.println(" ");// aca deberiamos escribir la direccion de la puerta 
 			}
 
