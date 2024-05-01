@@ -101,7 +101,26 @@ public class Archivo {
 			}else {
 				printWriter.println("SI");
 				printWriter.println(puntas[0] + " " + puntas[1]);
-				printWriter.println(" ");// aca deberiamos escribir la direccion de la puerta 
+				
+				if(puntas[1]==0)
+					printWriter.println("E");
+				else {
+					if(puntas[1]==7)
+						printWriter.println("O");
+					else {
+						if(puntas[0]==0)
+							printWriter.println("N");
+						else {
+							if(puntas[0]==4)
+								printWriter.println("S");
+							else {
+								printWriter.println("S");
+							}
+						}
+						
+					}
+				}
+				
 			}
 
 		} catch (Exception e) {

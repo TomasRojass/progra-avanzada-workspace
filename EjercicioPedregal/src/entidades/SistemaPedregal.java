@@ -3,7 +3,6 @@ package entidades;
 public class SistemaPedregal {
 
 	public void iniciar() {
-
 		Archivo archivoIn = new Archivo("Pedregal");
 		String[][] terreno = archivoIn.leerArchivo(Archivo.RUTA_ARCHIVOS_ENTRADA);
 		String[][] casa = archivoIn.leerArchivoCasa(Archivo.RUTA_ARCHIVOS_ENTRADA);
