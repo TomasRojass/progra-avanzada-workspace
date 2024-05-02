@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class Archivo {
+	
 	public static final String RUTA_ARCHIVOS_ENTRADA = "archivos/in/";
 	public static final String RUTA_ARCHIVOS_TESTS_ENTRADA = "archivos/test/in/";
 	public static final String RUTA_ARCHIVOS_SALIDA = "archivos/out/";
@@ -15,7 +16,6 @@ public class Archivo {
 
 	private String nombre;
 	
-
 	public Archivo(String nombre) {
 		this.nombre = nombre;
 	}

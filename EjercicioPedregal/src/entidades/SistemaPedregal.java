@@ -38,4 +38,5 @@ public class SistemaPedregal {
 		puntas[0]=-1;
 		return puntas;
 	}
+
 }
