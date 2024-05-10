@@ -2,7 +2,7 @@ package ejercicios;
 
 public class Ganancia {
 
-	public int robarGananciaMaximaMetodoBottomUp(int[] vector) {
+	public int robarGananciaMaximaBottomUp(int[] vector) {
 		
 		// Casos base
 		if (vector.length == 0) {

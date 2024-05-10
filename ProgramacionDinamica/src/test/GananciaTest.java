@@ -21,7 +21,7 @@ public class GananciaTest {
 		int[] vector = {2};
 		int resultadoEsperado = vector[0];
 		
-		int resultadoObtenido = ganancia.robarGananciaMaximaMetodoBottomUp(vector);
+		int resultadoObtenido = ganancia.robarGananciaMaximaBottomUp(vector);
 		
 		assertEquals(resultadoObtenido, resultadoEsperado);
 	}
@@ -31,7 +31,7 @@ public class GananciaTest {
 		int[] vector = {50, 25};
 		int resultadoEsperado = Math.max(vector[0], vector[1]);
 		
-		int resultadoObtenido = ganancia.robarGananciaMaximaMetodoBottomUp(vector);
+		int resultadoObtenido = ganancia.robarGananciaMaximaBottomUp(vector);
 		
 		assertEquals(resultadoObtenido, resultadoEsperado);
 	}
@@ -41,7 +41,7 @@ public class GananciaTest {
 		int[] vector = {3, 2, 7, 10, 6};
 		int resultadoEsperado = 16;		//3 + 7 + 6
 		
-		int resultadoObtenido = ganancia.robarGananciaMaximaMetodoBottomUp(vector);
+		int resultadoObtenido = ganancia.robarGananciaMaximaBottomUp(vector);
 		
 		assertEquals(resultadoObtenido, resultadoEsperado);
 	}
@@ -51,7 +51,7 @@ public class GananciaTest {
 		int[] vector = {2, 10, 3, 6, 8, 1, 7};
 		int resultadoEsperado = 25;		//10 + 8 + 7
 		
-		int resultadoObtenido = ganancia.robarGananciaMaximaMetodoBottomUp(vector);
+		int resultadoObtenido = ganancia.robarGananciaMaximaBottomUp(vector);
 		
 		assertEquals(resultadoObtenido, resultadoEsperado);
 	}

@@ -20,7 +20,7 @@ package ejercicios;
 
 public class MinaDeOro {
 
-	public int obtenerOroMaximoMetodoBottomUp(int[][] mina) {
+	public int obtenerOroMaximoBottomUp(int[][] mina) {
 
 		// Declaro un vector con la misma cantidad de filas y columnas
 		// El cual voy a estar almacenando lo maximo de oro que puedo conseguir por cada
