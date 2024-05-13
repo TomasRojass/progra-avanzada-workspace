@@ -64,14 +64,11 @@ public class QuicksortInt implements Quicksort<Integer>{
 		int aux = lista[pos1]; 
 		lista[pos1] = lista[pos2];
 		lista[pos2] = aux;
-		
 		return;
 	}
-	
 	
 	private int compareTo(Integer num1, Integer num2) {
 		return num1.compareTo(num2);
 	}
-	
 	
 }
