@@ -1,6 +1,15 @@
-package ejercicios;
+package LadronDeCasas;
 
-public class Ganancia {
+/* El ladron de casas:
+ * Dado un array de enteros casas donde cada posicion representa la cantidad de 
+ * dinero que hay en la casa casas sub i.
+ * Encontrar la maxima cantidad de dinero que un ladron puede robar, sabiendo que 
+ * no puede robar dos casas adyacentes dado que los sistemas de seguridad llamarian 
+ * inmediatamente a la policia 
+ * 
+ * Sugerencia: Resolverlo con la estrategia Bottom-Up */
+
+public class LadronDeCasa {
 
 	public int robarGananciaMaximaBottomUp(int[] vector) {
 		

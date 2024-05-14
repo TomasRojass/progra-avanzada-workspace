@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import ejercicios.MinaDeOro;
+import MinaDeOro.MinaDeOro;
 
 public class MinaDeOroTest {
 

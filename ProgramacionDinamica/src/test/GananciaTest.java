@@ -5,15 +5,15 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import ejercicios.Ganancia;
+import LadronDeCasas.LadronDeCasa;
 
 public class GananciaTest {
 
-	private static Ganancia ganancia;
+	private static LadronDeCasa ganancia;
 	
 	@Before
 	public void setUp() throws Exception{
-		ganancia = new Ganancia();
+		ganancia = new LadronDeCasa();
 	}
 
 	@Test

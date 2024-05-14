@@ -1,4 +1,4 @@
-package ejercicios;
+package MinaDeOro;
 
 //import java.util.Arrays;
 
