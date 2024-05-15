@@ -1,4 +1,6 @@
-import java.util.HashMap;
+package Varilla;
+
+//import java.util.HashMap;
 
 public class Main {
 
@@ -15,7 +17,6 @@ public class Main {
 	//int costoOptimo = cortar(largoVarilla, cortes, mapa);
 	
 	public static int cortar(int largoVarilla, int[] cortes) {
-		
 		//int mitad = largoVarilla / 2;
 		//int corteMasViable = buscarMitadMasCercana(cortes, mitad);
 		
@@ -23,15 +24,10 @@ public class Main {
 		
 		//cortar(corteMasViable, cortes, mitad - 1, cortes.length);
 		//cortar(largoVarilla - corteMasViable, cortes, 0, mitad + 1);
-		
 		return largoVarilla;
 	}
 	
 	private static int cortar(int largoVarilla, int[] cortes, int inicio, int fin) {
-		//if() {
-			
-		//}
-		
 		return 0;
 	}
 
