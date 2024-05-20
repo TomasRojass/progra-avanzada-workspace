@@ -29,7 +29,7 @@ public class EvaluadorTest {
 	@Test
 	public void primeraPrueba() {
 		Archivo archivo = new Archivo("gananciaTest");	// Cambiar los valores del archivo que es el mismo que el ejemplo
-		int presupuesto = archivo.leerArchivo(Archivo.RUTA_ARCHIVOS_TESTS_ENTRADA, fabricantes, compradores);
+		int presupuesto = archivo.leerArchivo(Archivo.RUTA_ARCHIVOS_TESTS, fabricantes, compradores);
 		int resultadoEsperado = 3800;
 		
 		int resultadoObtenido = evaluador.ganancia(presupuesto, fabricantes, compradores, fabricanteSeleccionado, compradorSeleccionado);

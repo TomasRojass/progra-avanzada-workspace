@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Evaluador {
+	
+	private static int RESIGNAR_NEGOCIO = -1;
 
 	public void iniciar() {
 
@@ -11,7 +13,7 @@ public class Evaluador {
 		List<Fabricante> fabricantes = new ArrayList<Fabricante>();
 
 		Archivo archivo = new Archivo("ganancia");
-		int presupuesto = archivo.leerArchivo(Archivo.RUTA_ARCHIVOS_ENTRADA, fabricantes, compradores);
+		int presupuesto = archivo.leerArchivo(Archivo.RUTA_ARCHIVOS, fabricantes, compradores);
 
 		/*System.out.println("======================== Fabricantes ========================");
 		mostrarFabricantes(fabricantes);
@@ -25,18 +27,65 @@ public class Evaluador {
 
 		int gananciaMaxima = ganancia(presupuesto, fabricantes, compradores, numeroDeFabricanteSeleccionado, numeroDeCompradorSeleccionado);
 
-		System.out.println("Comprando a " + numeroDeCompradorSeleccionado.getValor() + " y vendiendo a " + numeroDeFabricanteSeleccionado.getValor() + " gana " + gananciaMaxima + " por día.");
+		// VER ESTO
+        if (gananciaMaxima == RESIGNAR_NEGOCIO) {
+            System.out.println("No se puede realizar ninguna operación sin pérdidas.");
+        } else {
+            System.out.println("Comprando a " + numeroDeFabricanteSeleccionado.getValor() + " y vendiendo a " + numeroDeCompradorSeleccionado.getValor() + " gana " + gananciaMaxima + " por día.");
+        }
 	}
 
 	public int ganancia(int presupuesto, List<Fabricante> fabricantes, List<Comprador> compradores, MutableInt numeroDeFabricanteSeleccionado, MutableInt numeroDeCompradorSeleccionado) {
-
-		int maximaGanancia = 0;
 		
-		numeroDeFabricanteSeleccionado.setValor(1);
+		int maximaGanancia = Integer.MIN_VALUE;
+			
+		for(int compradorIndice = 0; compradorIndice < compradores.size(); compradorIndice++) {
+			
+	        Comprador comprador = compradores.get(compradorIndice);
+	        int precioCompra = comprador.getPrecioAPagarPorUnidad();
+	        int cantidadCompra = comprador.getCantidadDeUnidadesAComprar();
+	        
+	        for (int fabricanteIndice = 0; fabricanteIndice < fabricantes.size(); fabricanteIndice++) {
+	        	
+	            Fabricante fabricante = fabricantes.get(fabricanteIndice);
+	            int precioFabricacion = fabricante.getPrecioACobrarPorUnidad();
+	            int cantidadMinima = fabricante.getCantidadMinimaDeUnidades();
+	            
+	            // La cantidad que necesitamos comprar es el máximo entre la cantidad mínima del fabricante y
+	            // la cantidad que quiere el comprador
+	            int cantidadNecesaria = Math.max(cantidadMinima, cantidadCompra);
+	            int costoTotalFabricacion = cantidadNecesaria * precioFabricacion;
+	            
+	            // Verificamos si el costo total está dentro del presupuesto
+	            if (costoTotalFabricacion <= presupuesto) {
+	            	
+	            	// Calculamos la ganancia neta
+	                int ingresoTotal = cantidadCompra * precioCompra;
+	                int gananciaNeta = ingresoTotal - costoTotalFabricacion;
+	                
+	                if (gananciaNeta >= 0 && gananciaNeta > maximaGanancia) {
+	                	
+	                    maximaGanancia = gananciaNeta;
+	                    numeroDeFabricanteSeleccionado.setValor(fabricanteIndice + 1);
+	                    numeroDeCompradorSeleccionado.setValor(compradorIndice + 1);
+	                    
+	                }
+	                
+	            }
+	        }
+		}
+		
+		// Caso en que no se encontro ninguna combinación válida
+	    if (maximaGanancia == Integer.MIN_VALUE) {
+	        numeroDeFabricanteSeleccionado.setValor(0);
+	        numeroDeCompradorSeleccionado.setValor(0);
+	        return RESIGNAR_NEGOCIO;
+	    }
+		
+		/*numeroDeFabricanteSeleccionado.setValor(1);
 		numeroDeCompradorSeleccionado.setValor(1);
-		
 		int compradorActual = 1;
-
+		
 		for (Comprador comprador : compradores) {
 
 			int gananciaPorVenta = comprador.getCantidadDeUnidadesAComprar() * comprador.getPrecioAPagarPorUnidad();
@@ -64,7 +113,8 @@ public class Evaluador {
 				fabricanteActual++;
 			}
 			compradorActual++;
-		}
+		}*/
+		
 		return maximaGanancia;
 	}
 

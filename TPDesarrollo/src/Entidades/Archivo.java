@@ -10,10 +10,8 @@ public class Archivo {
 	public static int TODO_OK = 0;
 	public static int ERROR_RANGOS = -1;
 	
-	public static final String RUTA_ARCHIVOS_ENTRADA = "archivos/in/";
-	public static final String RUTA_ARCHIVOS_TESTS_ENTRADA = "archivos/test/in/";
-	public static final String RUTA_ARCHIVOS_SALIDA = "archivos/out/";
-	public static final String RUTA_ARCHIVOS_TESTS_SALIDA = "archivos/test/out/";
+	public static final String RUTA_ARCHIVOS = "Archivos/";
+	public static final String RUTA_ARCHIVOS_TESTS = "Archivos/test/";
 
 	private String nombre;
 
