@@ -1,10 +1,10 @@
 package Entidades;
 
-public class EnteroPorReferencia {
+public class MutableInt {
 
 	private int valor;
 
-	public EnteroPorReferencia(int valor) {
+	public MutableInt(int valor) {
 		this.valor = valor;
 	}
 
@@ -15,5 +15,5 @@ public class EnteroPorReferencia {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
-	
+
 }
