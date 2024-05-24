@@ -22,7 +22,6 @@ public class ShellSortInt implements ShellSort<Integer>{
 				lista[posicionAOrdenar] = aux;
 				limiteIzq ++;
 			}
-
 		}
 		
 		return lista;
