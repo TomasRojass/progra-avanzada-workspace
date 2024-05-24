@@ -1,4 +1,4 @@
-package Test;
+	package Test;
 
 import static org.junit.Assert.*;
 
@@ -29,7 +29,7 @@ public class EvaluadorTest {
 	}
 
 	@Test
-	public void primeraPrueba() {
+	public void existeGananciaMaxima() {
 		Archivo archivo = new Archivo("gananciaTest");	
 		archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
 		int resultadoEsperado = 3800;
