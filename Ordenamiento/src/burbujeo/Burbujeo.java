@@ -1,4 +1,4 @@
-package Burbujeo;
+package burbujeo;
 
 public class Burbujeo {
 	public void ordenar(int []vector){
