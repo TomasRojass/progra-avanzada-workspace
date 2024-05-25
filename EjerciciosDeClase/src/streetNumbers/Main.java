@@ -17,6 +17,7 @@ import streetNumberCalculator.StreetNumberCalculator;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		StreetNumberCalculator calculator = new StreetNumberCalculator();
 		System.out.println("Mi algoritmo de calculo: ");
 		System.out.println("Solucion: " + calculator.calculateStreetNumberMine(332928));
