@@ -1,21 +1,14 @@
 package quicksort;
-import java.util.Arrays;
 
 public class QuicksortInt implements Quicksort<Integer>{
 
 	@Override
-	public Integer[] ordenar(Integer[] lista) {
+	public void ordenar(Integer[] lista) {
 		int largo = lista.length;
-		Integer[] listaOrdenada = new Integer[largo];
 		int der = largo-1;
 		int izq = 0;
 		
-		//clono array (complejidad O(n))
-		listaOrdenada = Arrays.copyOf(lista, lista.length); 
-		
-		this.ordenarRecursivo(listaOrdenada, izq, der);
-		
-		return listaOrdenada;
+		this.ordenarRecursivo(lista, izq, der);		
 	}
 	
 	private void ordenarRecursivo(Integer[] lista, int izq, int der) {
@@ -26,11 +19,11 @@ public class QuicksortInt implements Quicksort<Integer>{
 		pivote = intercambioPivoteYUltimoElemento(lista, izq, der);
 		do {
 			//busco un elemento >= pivote
-			while(i <= j && this.compareTo(lista[i], pivote) < 0) {
+			while(i <= j && this.compareTo(lista[i], pivote) <= 0) {
 				i ++; 
 			}
 			//busco un elemento <= pivote
-			while(i <= j && this.compareTo(lista[j], pivote) > 0) {
+			while(i <= j && this.compareTo(lista[j], pivote) >= 0) {
 				j --;
 			}
 			

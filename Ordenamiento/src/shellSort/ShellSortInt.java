@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class ShellSortInt implements ShellSort<Integer>{
 
 	@Override
-	public Integer[] ordenar(Integer[] lista) {
+	public void ordenar(Integer[] lista) {
 		Integer[] vectorDeDistancias = this.generoVectorDeDistancias(lista.length);
 		int aux;
 		for(int i = vectorDeDistancias.length - 1; i >= 0; i-- ) {
@@ -23,8 +23,6 @@ public class ShellSortInt implements ShellSort<Integer>{
 				limiteIzq ++;
 			}
 		}
-		
-		return lista;
 	}
 	
 	private Integer[] generoVectorDeDistancias(int n) {
