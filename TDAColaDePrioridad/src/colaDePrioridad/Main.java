@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		Integer[] arrayDesordenado = { 8, 125, -3, 88, 4, 54, 33, -7, 5};
-		ColaDePrioridad<Integer> colaDePrioridad1 = new MonticuloInt(arrayDesordenado);
+		ColaDePrioridad<Integer> colaDePrioridad1 = new MonticuloDeMinimosInt(arrayDesordenado);
 		
 		System.out.println("-----------------------------------------");
 		System.out.println("Mostrando elementos: ");

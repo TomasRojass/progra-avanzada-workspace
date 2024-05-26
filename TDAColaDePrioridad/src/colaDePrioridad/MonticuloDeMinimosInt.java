@@ -2,16 +2,16 @@ package colaDePrioridad;
 
 import java.util.Arrays;
 
-public class MonticuloInt implements ColaDePrioridad<Integer>{
+public class MonticuloDeMinimosInt implements ColaDePrioridad<Integer>{
 	private Integer[] array;
 	private int tope;
 	
-	public MonticuloInt(Integer[] otroArray) {
+	public MonticuloDeMinimosInt(Integer[] otroArray) {
 		this.agrandarMonticulo(otroArray.length);
 		this.transformarListaEnMonticulo(otroArray);
 	}
 	
-	public MonticuloInt() {
+	public MonticuloDeMinimosInt() {
 		 this.array = new Integer[50];
 		 this.tope = 1;
 	}
