@@ -1,26 +1,47 @@
 # Programación Avanzada - UNLaM
-* Repositorio donde se encuentran proyectos sobre ejercicios en clase
-## Temas
-* Complejidad Computacional
+Repositorio de ejercicios y proyectos de la materia **Programación Avanzada**. En el mismo se encuentran implementados diversos algoritmos vistos en clase, desarrollados en lenguaje de programación Java.
+## Información de la Cursada :scroll:
+* **Materia**: Programación Avanzada
+* **Cuatrimestre**: Primer Cuatrimestre
+* **Año**: 2024
+## Docentes :woman_teacher:	:man_teacher:
+* Veronica Aubin
+* Lucas Videla
+## Integrantes :man_student::woman_student:	
+* Federico Loiero
+* Juan Bianchi
+* Leandro Sandoval
+* Nicole Ocampo
+* Tomas Rojas
+## Temas :books:
+* **Complejidad Computacional**
   * Estabilidad
   * Sensibilidad
   * Costo Computacional
   * Tiempo de Ejecución
-  * Notacion Big Oh
-* Algoritmos de ordenamiento elementales
+  * Notación Big Oh
+* **Algoritmos de Ordenamiento Elementales**
   * Burbujeo
   * Inserción
   * Selección
-* Algoritmos de ordenamiento no elementales
-  * Shell Sort
-  * Quick Sort
-  * Merge Sort
-  * Tim Sort
-* TDA Montículo y Cola de Prioridad
-  * Montículo de Maximos
-  * Montículo de Minimos
-* Programación Dinámica
+* **Algoritmos de Ordenamiento no Elementales**
+  * ShellSort
+  * QuickSort
+  * MergeSort / Fusión
+  * TimSort
+* **TDA Montículo y Cola de Prioridad**
+  * Montículo de Máximos
+  * Montículo de Mínimos
+* **Programación Dinámica**
   * Top-Down / Memorización
   * Bottom-Up / Tabulación
-## Versión de Java
-* [Descargar Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* **Grafos**
+  * Conceptos generales 
+  * Matriz de Adyacencia
+  * Lista de Adyacencia 
+  * Dijkstra
+  * Floyd / Warshall
+## Herramientas :desktop_computer:
+* **IDE Utilizado**: [Eclipse](https://eclipseide.org/)
+* **Versión de Java**: [Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
+* **Version de Bibliotecas para Pruebas Unitarias**: [JUnit4](https://junit.org/junit4/)
