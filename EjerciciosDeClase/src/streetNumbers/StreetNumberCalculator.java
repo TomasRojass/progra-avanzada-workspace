@@ -1,4 +1,4 @@
-package streetNumberCalculator;
+package streetNumbers;
 
 public class StreetNumberCalculator {
 	public long calculateStreetNumberMine(long n) {
