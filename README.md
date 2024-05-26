@@ -1,7 +1,7 @@
 # Programación Avanzada - UNLaM
 Repositorio de ejercicios y proyectos de la materia **Programación Avanzada**. En el mismo se encuentran implementados diversos algoritmos vistos en clase, desarrollados en lenguaje de programación Java.
-## Información de la Cursada :scroll:
-* **Materia**: Programación Avanzada
+## Información de la Asignatura :scroll:
+* **Materia**: Programación Avanzada (3652)
 * **Cuatrimestre**: Primer Cuatrimestre
 * **Año**: 2024
 ## Docentes :woman_teacher:	:man_teacher:
