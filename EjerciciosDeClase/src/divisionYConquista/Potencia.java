@@ -9,12 +9,12 @@ public class Potencia {
 		if(potencia == 1) {
 			return numero;
 		}
-		int nuevaPotencia = potencia / 2;
+		long nuevaPotencia = this.calcularPotencia(numero, potencia / 2);
 		if(potencia % 2 == 0) {
-			return this.calcularPotencia(numero, nuevaPotencia) * this.calcularPotencia(numero, nuevaPotencia);
+			return nuevaPotencia * nuevaPotencia;
 		}
 				
-		return numero * this.calcularPotencia(numero, nuevaPotencia) * this.calcularPotencia(numero,  nuevaPotencia);
+		return numero * nuevaPotencia * nuevaPotencia;
 	}
 
 }
