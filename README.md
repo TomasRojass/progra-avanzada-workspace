@@ -1,5 +1,5 @@
 # Programación Avanzada - UNLaM
-Repositorio de ejercicios y proyectos de la materia **Programación Avanzada**. En el mismo se encuentran implementados diversos algoritmos vistos en clase, desarrollados en lenguaje de programación Java.
+Repositorio de ejercicios y proyectos de la materia `Programación Avanzada`. En el mismo se encuentran implementados diversos algoritmos vistos en clase, desarrollados en lenguaje de programación `Java`.
 ## Información de la Asignatura :scroll:
 * **Materia**: Programación Avanzada (3652)
 * **Cuatrimestre**: Primer Cuatrimestre
@@ -28,21 +28,26 @@ Repositorio de ejercicios y proyectos de la materia **Programación Avanzada**. 
   * Costo Computacional
   * Tiempo de Ejecución
   * Notación Big Oh
+
 * **Algoritmos de Ordenamiento Elementales**
   * Burbujeo
   * Inserción
   * Selección
+
 * **Algoritmos de Ordenamiento no Elementales**
   * ShellSort
   * QuickSort
   * MergeSort / Fusión
   * TimSort
+
 * **TDA Montículo y Cola de Prioridad**
   * Montículo de Máximos
   * Montículo de Mínimos
+
 * **Programación Dinámica**
   * Top-Down / Memorización
   * Bottom-Up / Tabulación
+
 * **Grafos**
   * Conceptos generales 
   * Matriz de Adyacencia
