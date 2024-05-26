@@ -4,6 +4,14 @@ Repositorio de ejercicios y proyectos de la materia **Programación Avanzada**. 
 * **Materia**: Programación Avanzada (3652)
 * **Cuatrimestre**: Primer Cuatrimestre
 * **Año**: 2024
+## Trayecto Infraestructura :school:
+* **Año Académico**: Tercero - Segundo Cuatrimestre
+* **Carga Horaria Semanal**: 4 hs
+* **Carga Horaria Total**: 64 hs
+* **Modalidad**: Semipresencial
+* **Correlativas anteriores**
+  * Base de Datos Aplicada (3641)
+  * Paradigmas de Programación (3646)
 ## Docentes :woman_teacher:	:man_teacher:
 * Veronica Aubin
 * Lucas Videla
