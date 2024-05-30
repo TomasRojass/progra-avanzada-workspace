@@ -1,6 +1,6 @@
 package AlgortimoDeFloyd;
 
-public class Main {
+public class Floyd {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -55,7 +55,7 @@ public class Main {
 
             for (int i = 0; i < largo; i++) {
             	if(matrizDistancia[i][i] !=0 ) {
-            		throw new Exception("La distancia de un nodo a si mismos no puede ser distinto de cero");
+            		throw new Exception("La distancia de un nodo a si mismo no puede ser distinto de cero");
             	}
                 for (int j = 0; j < largo; j++) {
                 	
