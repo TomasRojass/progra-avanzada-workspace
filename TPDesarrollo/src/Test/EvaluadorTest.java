@@ -29,6 +29,15 @@ public class EvaluadorTest {
 	}
 
 	@Test
+	public void existeGananciaEnLaPrimeraIteracion() {
+		Archivo archivo = new Archivo("gananciaEnLaPrimeraIteracion");	
+		archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
+		int resultadoEsperado = 3800;
+		int resultadoObtenido = evaluador.ganancia(presupuesto.getValor(), fabricantes, compradores, fabricanteSeleccionado, compradorSeleccionado);
+		assertEquals(resultadoEsperado, resultadoObtenido);
+	}
+		
+	@Test
 	public void existeGananciaMaxima() {
 		Archivo archivo = new Archivo("gananciaTest");	
 		archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
