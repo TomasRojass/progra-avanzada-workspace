@@ -58,6 +58,7 @@ private int iteraciones;
 		int minCosto = Integer.MAX_VALUE;
 		// Recorre todas las posiciones de cortes posibles en el rango actual
 		for(int i = izq + 1; i < der; i++) {
+			this.iteraciones ++;
 			// Calcula el costo de cortar en la posición actual y los costos de los cortes recursivos
 			int costo = cortesVarilla[der] - cortesVarilla[izq] + cortarOptimoTopDown(cortesVarilla, izq, i, memo) + cortarOptimoTopDown(cortesVarilla,  i, der, memo);
 			if(costo < minCosto) {
