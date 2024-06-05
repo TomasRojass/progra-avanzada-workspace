@@ -58,7 +58,7 @@ public class Archivo {
 			if(Validacion.verificarPrecioYCantidad(precioACobrarPorUnidad, cantidadMinimaDeUnidades) != Constante.TODO_OK) {
 				return Constante.ERROR_RANGOS;
 			}
-			Fabricante fabricante = new Fabricante(precioACobrarPorUnidad, cantidadMinimaDeUnidades);
+			Fabricante fabricante = new Fabricante(precioACobrarPorUnidad, cantidadMinimaDeUnidades,i+1);
 			fabricantes.add(fabricante);
 		}
 		return Constante.TODO_OK;
@@ -72,7 +72,7 @@ public class Archivo {
 			if(Validacion.verificarPrecioYCantidad(precioAPagarPorUnidad, cantidadDeUnidadesAComprar) != Constante.TODO_OK) {
 				return Constante.ERROR_RANGOS;
 			}
-			Comprador comprador = new Comprador(precioAPagarPorUnidad, cantidadDeUnidadesAComprar);
+			Comprador comprador = new Comprador(precioAPagarPorUnidad, cantidadDeUnidadesAComprar,i+1);
 			compradores.add(comprador);
 		}
 		return Constante.TODO_OK;
