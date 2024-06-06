@@ -15,7 +15,7 @@ import Entidades.Fabricante;
 import Entidades.MutableInt;
 
 public class ArchivoTest {
-	
+
 	private static List<Fabricante> fabricantes;
 	private static List<Comprador> compradores;
 	private static MutableInt presupuesto;
@@ -32,10 +32,11 @@ public class ArchivoTest {
 		// Arrange
 		Archivo archivo = new Archivo("archivoConValoresFueraDeRango");
 		int resultadoEsperado = Constante.ERROR_RANGOS;
-		
+
 		// Act
-		int resultadoObtenido = archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
-		
+		int resultadoObtenido = archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores,
+				presupuesto);
+
 		// Assert
 		assertEquals(resultadoEsperado, resultadoObtenido);
 	}
@@ -45,10 +46,11 @@ public class ArchivoTest {
 		// Arrange
 		Archivo archivo = new Archivo("archivoVacio");
 		int resultadoEsperado = Constante.ARCHIVO_VACIO;
-		
+
 		// Act
-		int resultadoObtenido = archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
-	
+		int resultadoObtenido = archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores,
+				presupuesto);
+
 		// Assert
 		assertEquals(resultadoEsperado, resultadoObtenido);
 	}
