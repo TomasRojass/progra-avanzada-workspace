@@ -1,26 +1,22 @@
 package Entidades;
 
-public class Fabricante {
+public class Fabricante extends PersonaDeInteres{
 
-	private int precioACobrarPorUnidad;
-	private int cantidadMinimaDeUnidades;
 
-	public Fabricante(int precioACobrarPorUnidad, int cantidadMinimaDeUnidades) {
-		this.precioACobrarPorUnidad = precioACobrarPorUnidad;
-		this.cantidadMinimaDeUnidades = cantidadMinimaDeUnidades;
+	public Fabricante(int precio, int cantidad, int indice) {
+		super(precio, true , cantidad, indice);
 	}
 
-	public int getPrecioACobrarPorUnidad() {
-		return precioACobrarPorUnidad;
-	}
-
-	public int getCantidadMinimaDeUnidades() {
-		return cantidadMinimaDeUnidades;
+	@Override
+	public boolean esFabricante() {
+	   return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Precio a cobrar por unidad: " + precioACobrarPorUnidad + "\tCantidad minima de unidades: " + cantidadMinimaDeUnidades;
+		return "Precio a cobrar por unidad: " + this.getPrecio() + "\tCantidad minima de unidades: " + this.getCantidad();
 	}
+
+
 
 }
