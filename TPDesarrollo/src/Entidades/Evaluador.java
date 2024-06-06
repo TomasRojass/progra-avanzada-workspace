@@ -68,6 +68,7 @@ public class Evaluador {
 		// Primer recorrido para encontrar la ganancia máxima
 		// minPrecio: Guarda el precio mínimo de los fabricantes encontrados hasta el momento y su índice.
 
+		// PRECIO POR UNIDAD
 		for (PersonaDeInteres p : personas) {
 			// Si es un fabricante, se actualiza minPrecio si el precio del fabricante es menor que el mínimo actual.
 			if (p.esFabricante()) {
@@ -96,6 +97,7 @@ public class Evaluador {
 		// La lista personas se invierte para procesar desde el más grande al más pequeño.
 		Collections.reverse(personas);
 
+		// PRECIO POR COSTO
 		for (PersonaDeInteres p : personas) {
 
 			// Si es un fabricante, se calcula su costo total.

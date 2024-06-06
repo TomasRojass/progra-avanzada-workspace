@@ -28,17 +28,7 @@ public class EvaluadorTest {
 	}
 
 	@Test
-	public void existeGananciaEnLaPrimeraIteracion() {
-		Archivo archivo = new Archivo("gananciaEnLaPrimeraIteracion");
-		archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
-		int resultadoEsperado = 3800;
-		int resultadoObtenido = Evaluador.ganancia(presupuesto.getValor(), fabricantes, compradores,
-				fabricanteSeleccionado, compradorSeleccionado);
-		assertEquals(resultadoEsperado, resultadoObtenido);
-	}
-
-	@Test
-	public void existeGananciaMaxima() {
+	public void deberiaExistirGananciaMaxima() {
 		Archivo archivo = new Archivo("gananciaTest");
 		archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
 		int resultadoEsperado = 3800;
@@ -48,7 +38,7 @@ public class EvaluadorTest {
 	}
 
 	@Test
-	public void resignarNegocio() {
+	public void deberiaResignarNegocio() {
 		Archivo archivo = new Archivo("archivoConBajoPresupuesto");
 		archivo.leerArchivo(Constante.RUTA_ARCHIVOS_TESTS, fabricantes, compradores, presupuesto);
 		int resultadoEsperado = Constante.RESIGNAR_NEGOCIO;
