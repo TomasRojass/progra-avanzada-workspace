@@ -15,7 +15,7 @@ package streetNumbers;
 public class Main {
 
 	public static void main(String[] args) {
-		
+
 		StreetNumberCalculator calculator = new StreetNumberCalculator();
 		System.out.println("Mi algoritmo de calculo: ");
 		System.out.println("Solucion: " + calculator.calculateStreetNumberMine(332928));
@@ -29,5 +29,5 @@ public class Main {
 		System.out.println("Ejemplo O(1) ");
 		System.out.println("Solucion: " + calculator.calculateStreetNumberO1(332928));
 	}
-}
 
+}

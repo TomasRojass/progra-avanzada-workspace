@@ -3,7 +3,6 @@ package shellSort;
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
-import java.util.Arrays;
 
 public class test {
 
@@ -48,4 +47,5 @@ public class test {
         new ShellSortInt().ordenar(array);
         assertArrayEquals(new Integer[]{1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9}, array);
     }
+    
 }
