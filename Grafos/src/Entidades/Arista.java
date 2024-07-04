@@ -1,6 +1,9 @@
 package Entidades;
 
 public class Arista implements Comparable<Arista> {
+	
+	public static final int INFINITO = Integer.MAX_VALUE;
+	public static final int SIN_COSTO = 0;
 
 	private int origen;
 	private int destino;

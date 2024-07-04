@@ -13,7 +13,7 @@ public class GrafoImpMatriz implements Grafo {
 		this.cantidadDeVertices = cantidadDeVertices;
 		this.matrizDeAdyacencia = new int[this.cantidadDeVertices][this.cantidadDeVertices];
 		for (int i = 0; i < this.cantidadDeVertices; i++) {
-			Arrays.fill(this.matrizDeAdyacencia[i], INFINITO);
+			Arrays.fill(this.matrizDeAdyacencia[i], Arista.INFINITO);
 		}
 	}
 
@@ -27,7 +27,7 @@ public class GrafoImpMatriz implements Grafo {
 		List<Arista> aristas = new ArrayList<>();
 		for (int i = 0; i < cantidadDeVertices; i++) {
 			for (int j = 0; j < cantidadDeVertices; j++) {
-				if (matrizDeAdyacencia[i][j] != INFINITO) {
+				if (matrizDeAdyacencia[i][j] != Arista.INFINITO) {
 					aristas.add(new Arista(i, j, matrizDeAdyacencia[i][j]));
 				}
 			}
@@ -44,7 +44,7 @@ public class GrafoImpMatriz implements Grafo {
 	public void imprimirGrafo() {
 		for (int i = 0; i < this.cantidadDeVertices; i++) {
 			for (int j = 0; j < this.cantidadDeVertices; j++) {
-				if (this.matrizDeAdyacencia[i][j] == INFINITO) {
+				if (this.matrizDeAdyacencia[i][j] == Arista.INFINITO) {
 					System.out.print("INF\t");
 				} else {
 					System.out.print(this.matrizDeAdyacencia[i][j] + "\t");
