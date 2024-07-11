@@ -55,15 +55,18 @@ Repositorio de ejercicios y proyectos de la materia `Programación Avanzada`. En
   * Dijkstra
   * Floyd / Warshall
   * Minimum Spanning Tree
-  * Propiedad de Ciclo
-  * Propiedad de Corte
-  * Algoritmo de Prim
-  * Algoritmo de Kruskal
-  * Union-Find
+    * Propiedad de Ciclo
+    * Propiedad de Corte
+    * Algoritmo de Prim
+    * Algoritmo de Kruskal
+    * Union-Find
   * Coloreo
     * Algoritmo Secuencial
     * Algoritmo de Welsh Powell
     * Algoritmo de Matula
+  * Recorrido
+    * DFS
+    * BFS
 ## Herramientas :desktop_computer:
 * **IDE Utilizado**: [Eclipse](https://eclipseide.org/)
 * **Versión de Java**: [Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
