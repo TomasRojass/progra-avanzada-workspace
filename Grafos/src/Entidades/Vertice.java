@@ -1,15 +1,62 @@
 package Entidades;
 
-public class Vertice {
-	
+public class Vertice<T> implements Comparable<Vertice<T>> {
+
 	public static final boolean VISITADO = true;
-	
-    public static final int A = 0;
-    public static final int B = 1;
-    public static final int C = 2;
-    public static final int D = 3;
-    public static final int E = 4;
-    public static final int F = 5;
-    public static final int G = 6;
-    public static final int H = 7;
+
+	private int grado;
+
+	private T valor;
+
+	public Vertice(T valor) {
+		this.valor = valor;
+		this.grado = 0;
+	}
+
+	public void incrementarGrado() {
+		this.grado++;
+	}
+
+	public T getValor() {
+		return this.valor;
+	}
+
+	public int getGrado() {
+		return this.grado;
+	}
+
+	public void setValor(T valor) {
+		this.valor = valor;
+	}
+
+	@Override
+	public String toString() {
+		return valor.toString();
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public int compareTo(Vertice<T> otro) {
+		if (this.valor instanceof Comparable) {
+			return ((Comparable<T>) this.valor).compareTo(otro.getValor());
+		} else {
+			throw new IllegalArgumentException("El valor no es comparable");
+		}
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+		Vertice<?> vertice = (Vertice<?>) obj;
+		return valor.equals(vertice.valor);
+	}
+
+	@Override
+	public int hashCode() {
+		return valor.hashCode();
+	}
+
 }
