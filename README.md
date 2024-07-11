@@ -61,9 +61,9 @@ Repositorio de ejercicios y proyectos de la materia `Programación Avanzada`. En
   * Algoritmo de Kruskal
   * Union-Find
   * Coloreo
-  * Algoritmo Secuencial
-  * Algoritmo de Welsh Powell
-  * Algoritmo de Matula
+    * Algoritmo Secuencial
+    * Algoritmo de Welsh Powell
+    * Algoritmo de Matula
 ## Herramientas :desktop_computer:
 * **IDE Utilizado**: [Eclipse](https://eclipseide.org/)
 * **Versión de Java**: [Java SE 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
