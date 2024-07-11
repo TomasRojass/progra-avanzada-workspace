@@ -53,7 +53,8 @@ Repositorio de ejercicios y proyectos de la materia `Programación Avanzada`. En
   * Matriz de Adyacencia
   * Lista de Adyacencia 
   * Dijkstra
-  * Floyd / Warshall
+  * Floyd
+  * Warshall
   * Minimum Spanning Tree
     * Propiedad de Ciclo
     * Propiedad de Corte
