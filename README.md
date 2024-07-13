@@ -49,15 +49,11 @@ Repositorio de ejercicios y proyectos de la materia `Programación Avanzada`. En
   * Bottom-Up / Tabulación
 
 * **Grafos**
-  * Conceptos generales 
-  * Matriz de Adyacencia
-  * Lista de Adyacencia 
-  * Dijkstra
-  * Floyd
-  * Warshall
+  * Costos
+    * Algoritmo de Dijkstra
+    * Algoritmo de Floyd
+    * Algoritmo de Warshall
   * Minimum Spanning Tree
-    * Propiedad de Ciclo
-    * Propiedad de Corte
     * Algoritmo de Prim
     * Algoritmo de Kruskal
     * Union-Find
