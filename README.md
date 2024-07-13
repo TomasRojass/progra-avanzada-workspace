@@ -50,18 +50,25 @@ Repositorio de ejercicios y proyectos de la materia `Programación Avanzada`. En
 
 * **Grafos**
   * Costos
+
     * Algoritmo de Dijkstra
     * Algoritmo de Floyd
     * Algoritmo de Warshall
+
   * Minimum Spanning Tree
+    
     * Algoritmo de Prim
     * Algoritmo de Kruskal
     * Union-Find
+
   * Coloreo
+  
     * Algoritmo Secuencial
     * Algoritmo de Welsh Powell
     * Algoritmo de Matula
+  
   * Recorrido
+  
     * DFS
     * BFS
 ## Herramientas :desktop_computer:
