@@ -1,4 +1,4 @@
-package ProblemaMochila;
+package RoboMochila;
 
 import java.util.Objects;
 

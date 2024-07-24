@@ -1,10 +1,10 @@
-package sumaSubrectangulos;
+package SumaDeSubrectangulos;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		SumaSubrectangulos sumador = new SumaSubrectangulos();
+		SumaDeSubrectangulos sumador = new SumaDeSubrectangulos();
 		int[][] matriz = {
 	            {-5, 3, 5, 8, 2, 1, -4},
 	            {3, -8, -10, 2, -2, 5, 4},

@@ -1,12 +1,12 @@
-package test;
+package Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import ProblemaMochila.Item;
-import ProblemaMochila.Robo;
+import RoboMochila.Item;
+import RoboMochila.Robo;
 
 public class RoboMochilaTest {
 
