@@ -1,10 +1,11 @@
-package hospital;
+package Hospital;
 
 import java.util.List;
 
 public class Paciente implements Comparable<Paciente> {
 
 	private String nombre;
+
 	private List<Enfermedad> enfermedades;
 
 	public Paciente(String nombre, List<Enfermedad> enfermedades) {
@@ -14,6 +15,10 @@ public class Paciente implements Comparable<Paciente> {
 
 	public String getNombre() {
 		return nombre;
+	}
+
+	public void setEnfermedades(List<Enfermedad> enfermedades) {
+		this.enfermedades = enfermedades;
 	}
 
 	public void setNombre(String nombre) {

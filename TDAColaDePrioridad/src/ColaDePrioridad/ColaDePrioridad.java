@@ -1,4 +1,4 @@
-package colaDePrioridad;
+package ColaDePrioridad;
 
 public interface ColaDePrioridad <T extends Comparable<T>>{
 	public void insertarElemento(T elemento);

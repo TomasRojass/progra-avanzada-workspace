@@ -1,4 +1,4 @@
-package colaDePrioridad;
+package ColaDePrioridad;
 
 public class Main {
 
