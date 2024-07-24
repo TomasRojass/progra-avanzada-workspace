@@ -1,4 +1,4 @@
-package divisionYConquista;
+package DivisionYConquista;
 
 public class Potencia {
 

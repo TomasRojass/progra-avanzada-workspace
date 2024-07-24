@@ -1,4 +1,4 @@
-package divisionYConquista;
+package DivisionYConquista;
 
 public class SumaElementosArray {
 	public long sumar(Integer[] array) {
