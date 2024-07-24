@@ -31,7 +31,7 @@ public interface Grafo<T> {
 
 	boolean contieneArista(Vertice<T> origen, Vertice<T> destino);
 
-	void agregarArista(Vertice<T> origen, Vertice<T> destino, int peso);
+	void agregarArista(Vertice<T> origen, Vertice<T> destino, double peso);
 
 	void agregarArista(Vertice<T> origen, Vertice<T> destino);
 
@@ -40,6 +40,8 @@ public interface Grafo<T> {
 	Arista<T> obtenerArista(Vertice<T> origen, Vertice<T> destino);
 
 	List<Arista<T>> obtenerAristas();
+
+	double[][] getMatrizAdyacencia();
 
 	boolean esDirigido();
 

@@ -5,6 +5,7 @@ import java.util.Stack;
 import Entidades.Arista;
 import Entidades.Grafo;
 import Entidades.Vertice;
+import Excepciones.VerticeInvalidoException;
 
 public class DFS<T> {
 
@@ -18,11 +19,10 @@ public class DFS<T> {
 		pilaDeVertices = new Stack<Vertice<T>>();
 	}
 
-	public void recorrerGrafo(Grafo<T> grafo, Vertice<T> verticeInicial) {
+	public boolean[] recorrerGrafo(Grafo<T> grafo, Vertice<T> verticeInicial) throws VerticeInvalidoException {
 
 		if (!grafo.contieneVertice(verticeInicial)) {
-			System.out.println("El vertice " + verticeInicial.getValor() + " no pertenece al grafo.");
-			return;
+			throw new VerticeInvalidoException("El vertice " + verticeInicial.getValor() + " no pertence al grafo.");
 		}
 
 		this.vectorDeVisitantes = new boolean[grafo.obtenerCantidadDeVertices()];
@@ -33,7 +33,6 @@ public class DFS<T> {
 		while (!pilaDeVertices.isEmpty()) {
 
 			Vertice<T> verticeDesapilado = pilaDeVertices.pop();
-			System.out.print(verticeDesapilado.getValor() + " ");
 
 			for (Arista<T> arista : grafo.obtenerAristasDeVertice(verticeDesapilado)) {
 
@@ -47,10 +46,10 @@ public class DFS<T> {
 			}
 		}
 
-		System.out.println("\nVector de visitantes");
-		imprimirVectorDeVisitantes();
+		return this.vectorDeVisitantes;
 	}
 
+	@SuppressWarnings("unused")
 	private void imprimirVectorDeVisitantes() {
 		for (int i = 0; i < this.vectorDeVisitantes.length; i++) {
 			System.out.println(

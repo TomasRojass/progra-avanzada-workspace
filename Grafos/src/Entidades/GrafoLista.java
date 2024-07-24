@@ -60,7 +60,7 @@ public class GrafoLista<T> implements Grafo<T> {
 	}
 
 	@Override
-	public void agregarArista(Vertice<T> origen, Vertice<T> destino, int peso) {
+	public void agregarArista(Vertice<T> origen, Vertice<T> destino, double peso) {
 		if (!listaAdyacencia.containsKey(origen) || !listaAdyacencia.containsKey(destino)) {
 			throw new IllegalArgumentException("El vértice no existe en el grafo");
 		}
@@ -145,6 +145,31 @@ public class GrafoLista<T> implements Grafo<T> {
 
 	private void incrementarGrado(Vertice<T> vertice) {
 		vertice.incrementarGrado();
+	}
+
+	@Override
+	public double[][] getMatrizAdyacencia() {
+		int cantidadDeVertices = this.obtenerCantidadDeVertices();
+		double[][] matrizAdyacencia = new double[cantidadDeVertices][cantidadDeVertices];
+
+		List<Vertice<T>> vertices = this.obtenerVertices();
+
+		for (int i = 0; i < cantidadDeVertices; i++) {
+			for (int j = 0; j < cantidadDeVertices; j++) {
+				matrizAdyacencia[i][j] = Arista.INFINITO_DOUBLE;
+			}
+		}
+
+		for (int i = 0; i < cantidadDeVertices; i++) {
+			Vertice<T> vertice = vertices.get(i);
+			List<Arista<T>> aristas = this.obtenerAristasDeVertice(vertice);
+			for (Arista<T> arista : aristas) {
+				int j = vertices.indexOf(arista.getDestino());
+				matrizAdyacencia[i][j] = arista.getPeso();
+			}
+		}
+
+		return matrizAdyacencia;
 	}
 
 }

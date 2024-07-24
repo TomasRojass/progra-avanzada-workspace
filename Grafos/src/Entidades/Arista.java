@@ -2,19 +2,21 @@ package Entidades;
 
 public class Arista<T> implements Comparable<Arista<T>> {
 
-	public static final int INFINITO = Integer.MAX_VALUE;
+	public static final double INFINITO_DOUBLE = Double.POSITIVE_INFINITY;
 
-	public static final int SIN_COSTO = 0;
+	public static final int INFINITO_INTEGER = Integer.MAX_VALUE;
+
+	public static final double SIN_COSTO = 0.0;
 
 	private Vertice<T> origen;
 
 	private Vertice<T> destino;
 
-	private int peso;
+	private double peso;
 
 	private boolean esDirigida;
 
-	public Arista(Vertice<T> origen, Vertice<T> destino, int peso, boolean esDirigida) {
+	public Arista(Vertice<T> origen, Vertice<T> destino, double peso, boolean esDirigida) {
 		this.origen = origen;
 		this.destino = destino;
 		this.peso = peso;
@@ -29,7 +31,7 @@ public class Arista<T> implements Comparable<Arista<T>> {
 		return destino;
 	}
 
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
@@ -43,12 +45,12 @@ public class Arista<T> implements Comparable<Arista<T>> {
 
 	@Override
 	public String toString() {
-		return origen + " -> " + destino + (esDirigida ? " (dirigida)" : "") + " [peso: " + peso + "]";
+		return "(" + origen + (esDirigida ? " -> " : ", ") + destino + ", " + peso + ")";
 	}
 
 	@Override
 	public int compareTo(Arista<T> otraArista) {
-		return Integer.compare(this.peso, otraArista.peso);
+		return Double.compare(this.peso, otraArista.peso);
 	}
 
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class GrafoMatriz<T> implements Grafo<T> {
 
-	private int[][] matrizAdyacencia;
+	private double[][] matrizAdyacencia;
 
 	private List<Vertice<T>> vertices;
 
@@ -17,9 +17,9 @@ public class GrafoMatriz<T> implements Grafo<T> {
 	public GrafoMatriz(boolean esDirigido, boolean esPonderado, int numVertices) {
 		this.esDirigido = esDirigido;
 		this.esPonderado = esPonderado;
-		this.matrizAdyacencia = new int[numVertices][numVertices];
-		for (int[] fila : this.matrizAdyacencia) {
-			Arrays.fill(fila, Arista.INFINITO);
+		this.matrizAdyacencia = new double[numVertices][numVertices];
+		for (double[] fila : this.matrizAdyacencia) {
+			Arrays.fill(fila, Arista.INFINITO_DOUBLE);
 		}
 		vertices = new ArrayList<>();
 	}
@@ -51,11 +51,11 @@ public class GrafoMatriz<T> implements Grafo<T> {
 		if (indiceOrigen == -1 || indiceDestino == -1) {
 			return false;
 		}
-		return matrizAdyacencia[indiceOrigen][indiceDestino] != Arista.INFINITO;
+		return matrizAdyacencia[indiceOrigen][indiceDestino] != Arista.INFINITO_DOUBLE;
 	}
 
 	@Override
-	public void agregarArista(Vertice<T> origen, Vertice<T> destino, int peso) {
+	public void agregarArista(Vertice<T> origen, Vertice<T> destino, double peso) {
 		int indiceOrigen = vertices.indexOf(origen);
 		int indiceDestino = vertices.indexOf(destino);
 		if (indiceOrigen == -1 || indiceDestino == -1) {
@@ -85,7 +85,7 @@ public class GrafoMatriz<T> implements Grafo<T> {
 		}
 		List<Arista<T>> aristas = new ArrayList<>();
 		for (int j = 0; j < matrizAdyacencia.length; j++) {
-			if (matrizAdyacencia[indiceVertice][j] != Arista.INFINITO) {
+			if (matrizAdyacencia[indiceVertice][j] != Arista.INFINITO_DOUBLE) {
 				aristas.add(new Arista<>(vertice, vertices.get(j), matrizAdyacencia[indiceVertice][j], esDirigido));
 			}
 		}
@@ -101,7 +101,7 @@ public class GrafoMatriz<T> implements Grafo<T> {
 			return null;
 		}
 
-		if (matrizAdyacencia[indiceOrigen][indiceDestino] != Arista.INFINITO) {
+		if (matrizAdyacencia[indiceOrigen][indiceDestino] != Arista.INFINITO_DOUBLE) {
 			return new Arista<>(origen, destino, matrizAdyacencia[indiceOrigen][indiceDestino], esDirigido);
 		}
 
@@ -113,7 +113,7 @@ public class GrafoMatriz<T> implements Grafo<T> {
 		List<Arista<T>> aristas = new ArrayList<>();
 		for (int i = 0; i < vertices.size(); i++) {
 			for (int j = 0; j < vertices.size(); j++) {
-				if (matrizAdyacencia[i][j] != Arista.INFINITO) {
+				if (matrizAdyacencia[i][j] != Arista.INFINITO_DOUBLE) {
 					aristas.add(new Arista<>(vertices.get(i), vertices.get(j), matrizAdyacencia[i][j], esDirigido));
 				}
 			}
@@ -137,7 +137,7 @@ public class GrafoMatriz<T> implements Grafo<T> {
 		for (int i = 0; i < vertices.size(); i++) {
 			sb.append(vertices.get(i)).append(": ");
 			for (int j = 0; j < matrizAdyacencia.length; j++) {
-				if (matrizAdyacencia[i][j] != Arista.INFINITO) {
+				if (matrizAdyacencia[i][j] != Arista.INFINITO_DOUBLE) {
 					sb.append(vertices.get(i)).append(" -> ").append(vertices.get(j)).append(" [peso: ")
 							.append(matrizAdyacencia[i][j]).append("], ");
 				}
@@ -146,6 +146,23 @@ public class GrafoMatriz<T> implements Grafo<T> {
 			sb.append("\n");
 		}
 		return sb.toString();
+	}
+
+	public void mostrarMatrizAdyacencia() {
+		int filas = this.matrizAdyacencia.length;
+		int columnas = this.matrizAdyacencia[0].length;
+		for (int i = 0; i < filas; i++) {
+			for (int j = 0; j < columnas; j++) {
+				System.out.print(
+						(this.matrizAdyacencia[i][j] == Arista.INFINITO_DOUBLE ? "INF" : this.matrizAdyacencia[i][j])
+								+ (j < columnas - 1 ? "\t" : "\n"));
+			}
+		}
+	}
+
+	@Override
+	public double[][] getMatrizAdyacencia() {
+		return this.matrizAdyacencia;
 	}
 
 	private void incrementarGrado(Vertice<T> vertice) {
