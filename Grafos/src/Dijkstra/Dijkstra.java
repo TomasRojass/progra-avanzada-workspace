@@ -45,6 +45,7 @@ public class Dijkstra implements GrafoDirigido {
 		return null;
 	}
 
+	@SuppressWarnings("unused")
 	public double[] dijkstra(int desde) {
 		predecesores = new int[this.getNodos()];
 		boolean[] visitados = new boolean[this.getNodos()];

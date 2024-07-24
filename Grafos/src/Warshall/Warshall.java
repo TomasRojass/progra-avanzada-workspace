@@ -2,6 +2,7 @@ package Warshall;
 
 public class Warshall {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// Pasarlas a test
 		int[][] matriz1 = new int[][] { { 0, 1, 1 }, { 0, 0, 0 }, { 0, 1, 0 } };
@@ -57,5 +58,5 @@ public class Warshall {
 
 		return matrizDistancia;
 	}
-	
+
 }

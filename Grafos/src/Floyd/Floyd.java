@@ -2,6 +2,7 @@ package Floyd;
 
 public class Floyd {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 
 		int I = Integer.MAX_VALUE;
